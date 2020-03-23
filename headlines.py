@@ -19,11 +19,7 @@ def get_news():
     else:
         publication = query.lower()
     feed = feedparser.parse(RSS_FEED[publication])
-    first_article = feed['entries']
     return render_template("home.html", articles=feed['entries'])
-    # title=first_article.get("title"),
-    # published=first_article.get("published"),
-    # summary=first_article.get("summary"))
 
 
 if __name__ == '__main__':
